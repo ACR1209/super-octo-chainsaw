@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  ID String @id
+  name String
+  registeredOn DateTime
+  email String
+  workRegime WorkRegime @default(LOEP)
+  age Int
+}
+
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  name String @default("")
+  password String 
+  last_loged DateTime @default(now())
+}
+
+enum WorkRegime {
+  LOEP
+  CODIGO_TRABAJO
+  JUBILADO
+}

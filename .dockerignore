@@ -1,0 +1,5 @@
+.next
+.vscode
+.scannerwork
+node_modules
+.env

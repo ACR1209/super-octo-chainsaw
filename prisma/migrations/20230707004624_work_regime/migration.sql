@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `employee` ADD COLUMN `workRegime` ENUM('LOEP', 'CODIGO_TRABAJO', 'JUBILADO') NOT NULL DEFAULT 'LOEP';
